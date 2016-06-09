@@ -41,12 +41,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         */
-        dialog.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener(){
+        /*dialog.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener(){
 
             public void onClick(DialogInterface dialog, int which){
                 but.setText(items[which]);
             }
 
+        });
+        */
+
+        dialog.setMultiChoiceItems(items, checkArr, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which, boolean isChecked) { //which->내가 선택한 번호
+                but.setText(items[which]);
+            }
         });
 
         dialog.setIcon(R.drawable.first_icon);
